@@ -1,18 +1,26 @@
-# L6_L7_12 — Cloud Storage Tier
+# Lab 6 — Code and Branch Coverage
 
-Lab 6: Code and Branch Coverage
-
-## About
-
-A small Python module that computes tenant storage and network egress costs across hot, cool, and archive storage tiers, and monitors distributed cluster nodes for replication latency spikes.
+## Objective
+Add pytest tests for `cloud_storage_tier.py` and achieve high line and branch coverage.
 
 ## Files
+- `cloud_storage_tier.py` — original module provided in the lab repository (unchanged).
+- `test_cloud_storage.py` — completed test suite.
 
-| File | Description |
-|------|-------------|
-| `cloud_storage_tier.py` | The module under test |
-| `test_cloud_storage.py` | Starter test file |
+## Run the tests
+Open a terminal in this folder and run:
 
-Keep all your Lab 6 work in this `LAB6` folder. Lab 7 will be added to this repo later.
+```bash
+python -m pip install pytest pytest-cov
+python -m pytest -v
+python -m pytest --cov=cloud_storage_tier --cov-branch --cov-report=term-missing
+```
 
-Refer to the lab handout for instructions.
+## Verified result
+- 20 tests passed.
+- Line coverage: 100%.
+- Branch coverage: 100%.
+
+The tests cover input validation, inactive tenants, all storage tiers, invalid tiers and bucket sizes, corrupted buckets, large-bucket discounts, egress overage, backup fees, audit status, zero usage, and replication-latency monitoring.
+
+Lab 7 and Lab 12 are not included or modified.
